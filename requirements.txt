@@ -1,0 +1,5 @@
+flask
+python-dotenv
+azure-cosmos
+azure-search-documents
+azure-core

@@ -1,0 +1,60 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.egg-info/
+
+# Distribution / packaging
+.Python
+env/
+venv/
+lib/
+lib64/
+include/
+share/bin/
+bin/
+*.whl
+*.egg
+dist/
+build/
+*.spec
+*.pyi
+
+# Editors and IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Flask specific
+instance/
+.flaskenv
+
+# Database files
+*.sqlite
+*.db
+
+# Environment variables
+.env
+.flaskenv.local
+
+# Logs
+*.log
+
+# Uploads and temporary files
+uploads/
+tmp/
+
+# Pip cache
+.pip/
+
+# Coverage reports
+.coverage
+.coverage.*
+
+# Jupyter Notebook files
+.ipynb_checkpoints/
