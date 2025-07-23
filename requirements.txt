@@ -1,6 +1,5 @@
 flask
 python-dotenv
-azure
 azure-cosmos
 azure-search-documents
 azure-core
