@@ -30,13 +30,37 @@
             margin-bottom: 30px;
         }
 
-        input[type="text"] {
+        .form-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+
+        .form-section h2 {
+            margin-top: 0;
+            color: #444;
+            border-bottom: 2px solid #007cba;
+            padding-bottom: 10px;
+        }
+
+        .search-form, .upload-form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="file"] {
             width: 70%;
             padding: 12px;
             font-size: 16px;
             border: 2px solid #ddd;
             border-radius: 4px;
             margin-right: 10px;
+        }
+
+        input[type="file"] {
+            width: 75%;
+            padding: 10px;
         }
 
         input[type="submit"] {
@@ -72,11 +96,19 @@
             overflow-y: auto;
         }
 
-        .no-results {
+        .file-info {
+            font-size: 12px;
             color: #666;
+            margin-top: 5px;
             font-style: italic;
-            text-align: center;
-            padding: 20px;
+        }
+
+        .success {
+            color: #2e7d32;
+            background-color: #e8f5e8;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -84,10 +116,24 @@
     <div class="container">
         <h1>Document Search</h1>
 
-        <form method="POST" class="search-form">
-            <input type="text" name="query" placeholder="Enter your search query..." required>
-            <input type="submit" value="Search">
-        </form>
+        <!-- Search Form -->
+        <div class="form-section">
+            <h2>Search Documents</h2>
+            <form method="POST" class="search-form">
+                <input type="text" name="query" placeholder="Enter your search query...">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+
+        <!-- Upload Form -->
+        <div class="form-section">
+            <h2>Upload Document</h2>
+            <form method="POST" enctype="multipart/form-data" class="upload-form">
+                <input type="file" name="document" accept=".pdf,.txt,.doc,.docx" required>
+                <input type="submit" value="Upload">
+            </form>
+            <p class="file-info">Supported formats: PDF, TXT, DOC, DOCX (Max: 16MB)</p>
+        </div>
 
         {% if error %}
             <div class="error">{{ error }}</div>
